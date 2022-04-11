@@ -17,6 +17,8 @@ YOLOv3_ReSAM:A Small Target Detection Method With Spatial Attention  Module
 Drones, or general UAVs, equipped with cameras have been fast deployed to a wide range of applications, including agricultural, aerial photography, fast delivery, and surveillance. Consequently, automatic understanding of visual data collected from these platforms become highly demanding, which brings computer vision to drones more and more closely. We are excited to present a large-scale benchmark with carefully annotated ground-truth for various important computer vision tasks, named VisDrone, to make vision meet drones.
 
 The VisDrone2021 dataset is collected by the AISKYEYE team at Lab of Machine Learning and Data Mining , Tianjin University, China. The benchmark dataset consists of 400 video clips formed by 265,228 frames and 10,209 static images, captured by various drone-mounted cameras, covering a wide range of aspects including location (taken from 14 different cities separated by thousands of kilometers in China), environment (urban and country), objects (pedestrian, vehicles, bicycles, etc.), and density (sparse and crowded scenes). Note that, the dataset was collected using various drone platforms (i.e., drones with different models), in different scenarios, and under various weather and lighting conditions. These frames are manually annotated with more than 2.6 million bounding boxes or points of targets of frequent interests, such as pedestrians, cars, bicycles, and tricycles. Some important attributes including scene visibility, object class and occlusion, are also provided for better data utilization.
+VisDrone2019 数据集由中国天津大学机器学习与数据挖掘实验室的 AISKYEYE 团队发布。基准数据集由265228帧和10209张静态图像组成的400个视频片段组成，涵盖范围广泛，包括位置（取自中国相隔数千公里的不同地域）、环境（城镇街道和农村街道）、目标（行人、三轮车、卡车等）和密度（稀疏和拥挤的场景）。此数据集是使用各种无人机平台（即具有不同型号的无人机）、在不同场景下以及在各种天气和光照条件下采集的。数据集全部是由团队手动注释的260万个边界框或感兴趣的目标点，例如行人、卡车和公交车等10类常见地面道路可移动目标。
+与Microsoft COCO（MS COCO）数据集比较，单张图像最大检测目标数为100，而VisDrone2019 数据集单张图像最大检测数为500，且大部分集中在小目标上。MS COCO数据集评价指标以平均精确度AP进行评价，选择不同阈值下AP和不同目标像素面积下AP作为评价指标，且阈值通常选择为0.75。而VisDrone2019 数据集中由于小目标所占据像素面积较小，导致真实框与预测框交叉重叠率太小而判断错误。考虑到小目标的预测框太小，IOU阈值设定为0.5。因此，选择以阈值为0.5以上的AP作为评价指标，后续实验数据均以VisDrone2019 数据集阈值为0.5以上的AP作为评价指标进行实验数据对比分析。
 
 
 ### Linux上编译
@@ -119,7 +121,24 @@ eval = coco
 ```
 ###实验结果
 ```
-实验结果表明:
+实验结果:
+	                             表1  VisDrone2019-DET-Test	(不同网络模型下各类目标的平均精度均值)
+                pedestrain	 people	  bicycle	  car	     van	    trunk	   tricycle	  Awing-tricycle	 bus	    motor	   mAP0.5
+yolov3    	    5.52%	       5.66%	  25.19%	  10.21%	 43.83%	  25.64%	 16.75%	    14.22%	         34.85%	  38.96%	 22.08%
+yolov3_ReSAM	  7.28%	       5.78%	  28.70%	  14.31%	 53.77%	  42.96%	 30.48%	    24.38%	         62.35%	  61.57%	 33.15%
+
+
+            表2 VisionDrone2019-Changle比赛结果
+排名	  模型&方法	    mAP0.5平均精度均值(%)	    AR500召回率(%)
+1	      DPNetV3	      37.37	                    53.78
+2	      SMPNet	      35.98	                    53.33
+3	      DBNet	        35.73	                    52.57
+4	      CDNet	        34.19	                    49.57
+5	   ECascade R-CNN	  34.09	                    51.61
+6	   FPAFS-CenterNet	32.34	                    39.48
+7	   DOHR-RetinalNet	21.68	                    27.63
+	   YOLOV3-ReSAM	    33.15%	                  45.57
+
 
 改进后的网络模型平均精度均值mAP较原生网络模型提高11.07%，且单张图像平均召回率稳定在45%左右。另一方面，建立基于奖赏机制的边界回归策略,对原生网络模型中的边界回归粗定位基础上引入强化学习思想进行精细化调整。实验结果表明:经过精细化调整的边界回归结果较原生边界回归算法提高23.74%。
 ```

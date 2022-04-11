@@ -106,7 +106,7 @@ eval = coco
 
 (7)运⾏训练好的模型，进⾏目标检测，执⾏：
 ```
-./darknet detector test data/obj.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM_300000.weights
+./darknet detector demo cfg/uav_dataset.data cfg/yolov3_ReSAM.cfg yolov3-tiny-resnet02_120000_300000.weights
 ```
 ###实验结果
 ```

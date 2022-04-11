@@ -78,13 +78,13 @@ eval = coco
 （4）将visdrone2019数据集中图像⽂件（.jpg）与标注⽂件放⼊到如下路径`darknet\data\coco\`路径下
 
 (5)开始训练
-* 训练指令：`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg yolov3.conv.53`
+* 训练指令：`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg darknet53.conv.74`
 * （对于最新100次迭代的最新权重`yolo-obj_last.weights`会保存在`darknet\backup\`）
 * （对于每1000次迭代的权重`yolo-obj_xxxx.weights`会保存在`darknet\backup\`）
-* （关闭Loss的显示窗口`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg yolov3.conv.53 -dont_show`）
-* （通过浏览器查看训练过程`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg yolov3.conv.53 -dont_show -mjpeg_port 8090 -map`，然后打开Chrome浏览器，输⼊`http://ip-address:8090`）
+* （关闭Loss的显示窗口`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg darknet53.conv.74 -dont_show`）
+* （通过浏览器查看训练过程`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg darknet53.conv.74 -dont_show -mjpeg_port 8090 -map`，然后打开Chrome浏览器，输⼊`http://ip-address:8090`）
 * （如果需要在训练中计算mAP，每4期计算一次，需要在`obj.data`⽂件中设置
-`valid=valid.txt`，运⾏：`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg yolov3.conv.53 -map`）
+`valid=valid.txt`，运⾏：`./darknet detector train data/obj.data cfg/yolov3_ReSAM.cfg darknet53.conv.74 -map`）
 7. 训练结束，结果保存在`darknet\backup\yolo-obj_final.weights`
 * 如果训练中断，可以选择一个保存的权重继续训练，使用`./darknet detector train data/obj.data yolov3_ReSAM.cfg backup\yolo-obj_2000.weights`
 > 注意：在训练中，如果`avg`（loss）出现`nan`，则训练出了问题，

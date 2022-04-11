@@ -49,9 +49,7 @@ git clone https://github.com/AlexeyAB/darknet.git
 ```
 * 检测给定路径的单个视频，并将检测结果保存为视频
 ```
-* 利用摄像机实时检测（YOLOv3-Tiny）
-```
-./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights -c 0
+
 ```
 ### 开始训练模型
 

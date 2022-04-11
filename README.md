@@ -29,6 +29,11 @@ git clone https://github.com/AlexeyAB/darknet.git
 `LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH ./uselib test.mp4`
 
 ###在自己修改或添加的模块代码中嵌⼊YOLOv3中
+主要研究了低空无人机对地小目标检测算法
+(1)扩充了特征金字塔并行结构融合了浅层特征,从而提取浅层网络模型中更多小目标细粒度特征信息到顶层特征图中进行预测。
+(2)多级并行特征金字塔结构中由于多层次和多尺度操作引起的重新缩放操作造成空间信息层级化的丢失，通过注入空间注意力机制弥补像素级分类的精度损失，弱化背景特征的同时强化小目标特征响应。
+(3)将空间注意力模块直接纵向加入原生主干网络结构中，新模块的添加会增加网络深度，深层的网络结构能够提取到具有丰富语义信息的抽象特征，但单一的纵向增加网络层数存在梯度消失的隐患，所以通过融入残差网络来横向加深网络。
+
 
 ### 预训练模型
 所有模型都是在VisDrone2019-DET数据集上训练，模型包括两个⽂件（`cfg`和`weights`）
@@ -47,7 +52,10 @@ git clone https://github.com/AlexeyAB/darknet.git
 ```
 ./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights -ext_outputtest.mp4
 ```
-* 检测给定路径的单个视频，并将检测结果保存为视频
+* 利用摄像机实时检测
+```
+./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights -c 0
+```
 ```
 
 ```
@@ -96,3 +104,6 @@ eval = coco
 ```
 ./darknet detector test data/obj.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM_300000.weights
 ```
+###实验结果
+
+实验结果表明:改进后的网络模型平均精度均值mAP较原生网络模型提高11.07%，且单张图像平均召回率稳定在45%左右。另一方面，建立基于奖赏机制的边界回归策略,对原生网络模型中的边界回归粗定位基础上引入强化学习思想进行精细化调整。实验结果表明:经过精细化调整的边界回归结果较原生边界回归算法提高23.74%。

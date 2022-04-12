@@ -24,7 +24,7 @@ VisDrone2019 数据集由中国天津大学机器学习与数据挖掘实验室�
 
 
 ### Linux上编译
-下载YOLOv4源码，推荐使用**Ubuntu 18.04**：
+下载DarkNet（yolov3）源码，推荐使用**Ubuntu 18.04**：
 ```
 sudo apt-get install -y git
 git clone https://github.com/AlexeyAB/darknet.git

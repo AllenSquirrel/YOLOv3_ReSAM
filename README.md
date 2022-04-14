@@ -63,21 +63,20 @@ git clone https://github.com/AlexeyAB/darknet.git
 ```
 * 检测给定路径的单张图像（参数最后的路径需要写待检测图像的路径）
 ```
-./darknet detector test cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights -ext_output /home/jario/Pictures/h1.jpg
+./darknet detector test cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights data/s2.jpg
 ```
-![image](https://user-images.githubusercontent.com/28772715/163292691-0c7d36cd-0b40-4168-90d3-64bad5c0388a.png)
+![image](https://user-images.githubusercontent.com/28772715/163293284-6b557fd6-5a71-4032-b3ce-ac4c5f861272.png)
 
 * 检测给定路径的单个视频
 ```
-./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights -ext_outputtest.mp4
+./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights data/test.mp4
 ```
+
 * 利用摄像机实时检测
 ```
 ./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights -c 0
 ```
-```
 
-```
 ### 开始训练模型
 
 (1) 针对选择的模型，下载预训练权重：
@@ -123,8 +122,9 @@ eval = coco
 ```
 ./darknet detector demo cfg/uav_dataset.data cfg/yolov3_ReSAM.cfg yolov3-tiny-resnet02_120000_300000.weights test.mp4
 ```
+
 ###实验结果
-```
+
 实验结果:
 	                             表1  VisDrone2019-DET-Test	(不同网络模型下各类目标的平均精度均值)
              pedestrain	  people  bicycle  car	   van	   trunk    tricycle    Awing-tricycle	 bus	    motor        mAP0.5
@@ -148,4 +148,4 @@ yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	   
 ![image](https://user-images.githubusercontent.com/28772715/163292992-338f5aae-ab79-46d1-967a-8afc1c9bef60.png)
 
 改进后的网络模型平均精度均值mAP较原生网络模型提高11.07%，且单张图像平均召回率稳定在45%左右。另一方面，建立基于奖赏机制的边界回归策略,对原生网络模型中的边界回归粗定位基础上引入强化学习思想进行精细化调整。实验结果表明:经过精细化调整的边界回归结果较原生边界回归算法提高23.74%。
-```
+

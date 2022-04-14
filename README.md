@@ -140,7 +140,9 @@ yolov3       5.52%	  5.66%	  25.19%   10.21%  43.83%  25.64%   16.75%	14.22%	   
 yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	         62.35%	    61.57%	 33.15%
 ```
 准确度曲线结果：
+
 ![image](https://user-images.githubusercontent.com/28772715/163297087-893c2be5-aee3-4e67-85f8-7729ee9cc678.png)
+
 ![image](https://user-images.githubusercontent.com/28772715/163297109-1f16c37e-de1e-4f86-965d-01aa6fdaf09b.png)
 
 ```
@@ -156,9 +158,11 @@ yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	   
 	   YOLOV3-ReSAM	          33.15%	            45.57
 ```
 边界回归IoU曲线：
+
 ![image](https://user-images.githubusercontent.com/28772715/163297214-50a03c38-cf62-487a-bf17-5f130e779feb.png)
 
 边界回归可视化效果：
+
 ![image](https://user-images.githubusercontent.com/28772715/163297252-d5790a13-b022-44b8-bc8c-a0c3e4b93cbd.png)
 
 改进后的网络模型平均精度均值mAP较原生网络模型提高11.07%，且单张图像平均召回率稳定在45%左右。另一方面，建立基于奖赏机制的边界回归策略,对原生网络模型中的边界回归粗定位基础上引入强化学习思想进行精细化调整。实验结果表明:经过精细化调整的边界回归结果较原生边界回归算法提高23.74%。

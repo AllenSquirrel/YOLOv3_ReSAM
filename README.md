@@ -71,11 +71,13 @@ git clone https://github.com/AlexeyAB/darknet.git
 ```
 ./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights data/test.mp4
 ```
+![QQ视频20220414091941](https://user-images.githubusercontent.com/28772715/163295930-0d259155-4ea4-4d87-90ac-0a6b759005ee.gif)
 
 * 利用摄像机实时检测
 ```
 ./darknet detector demo cfg/uav.data cfg/yolov3_ReSAM.cfg yolov3_ReSAM.weights -c 0
 ```
+![QQ视频20220414092905](https://user-images.githubusercontent.com/28772715/163296209-6c8c169f-ab39-4c03-bc5b-b779358ff631.gif)
 
 ### 开始训练模型
 

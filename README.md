@@ -46,9 +46,14 @@ git clone https://github.com/AlexeyAB/darknet.git
 主要研究了低空无人机对地小目标检测算法
 
 (1)扩充了特征金字塔并行结构融合了浅层特征,从而提取浅层网络模型中更多小目标细粒度特征信息到顶层特征图中进行预测。
-
+```
+![image](https://user-images.githubusercontent.com/28772715/163296904-04e6a1e1-a704-4960-bd3c-1665e591a409.png)
+```
 (2)多级并行特征金字塔结构中由于多层次和多尺度操作引起的重新缩放操作造成空间信息层级化的丢失，通过注入空间注意力机制弥补像素级分类的精度损失，弱化背景特征的同时强化小目标特征响应。
+```
+![image](https://user-images.githubusercontent.com/28772715/163296978-bf91a1d2-73e7-4e80-92a1-ad9b8ea875ee.png)
 
+```
 (3)将空间注意力模块直接纵向加入原生主干网络结构中，新模块的添加会增加网络深度，深层的网络结构能够提取到具有丰富语义信息的抽象特征，但单一的纵向增加网络层数存在梯度消失的隐患，所以通过融入残差网络来横向加深网络。
 ```
 
@@ -134,7 +139,10 @@ eval = coco
 yolov3       5.52%	  5.66%	  25.19%   10.21%  43.83%  25.64%   16.75%	14.22%	         34.85%	    38.96%	 22.08%
 yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	         62.35%	    61.57%	 33.15%
 ```
-![image](https://user-images.githubusercontent.com/28772715/163292784-17bb0024-1d59-4668-a203-999e4d62cd20.png)
+准确度曲线结果：
+![image](https://user-images.githubusercontent.com/28772715/163297087-893c2be5-aee3-4e67-85f8-7729ee9cc678.png)
+![image](https://user-images.githubusercontent.com/28772715/163297109-1f16c37e-de1e-4f86-965d-01aa6fdaf09b.png)
+
 ```
             表2 VisionDrone2019-Changle比赛结果
 排名	  模型&方法	    mAP0.5平均精度均值(%)	    AR500召回率(%)
@@ -147,7 +155,11 @@ yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	   
 7	   DOHR-RetinalNet	  21.68	                    27.63
 	   YOLOV3-ReSAM	          33.15%	            45.57
 ```
-![image](https://user-images.githubusercontent.com/28772715/163292870-f4534547-d5ef-405e-ac5c-ba565bd2c35b.png)
+边界回归IoU曲线：
+![image](https://user-images.githubusercontent.com/28772715/163297214-50a03c38-cf62-487a-bf17-5f130e779feb.png)
+
+边界回归可视化效果：
+![image](https://user-images.githubusercontent.com/28772715/163297252-d5790a13-b022-44b8-bc8c-a0c3e4b93cbd.png)
 
 改进后的网络模型平均精度均值mAP较原生网络模型提高11.07%，且单张图像平均召回率稳定在45%左右。另一方面，建立基于奖赏机制的边界回归策略,对原生网络模型中的边界回归粗定位基础上引入强化学习思想进行精细化调整。实验结果表明:经过精细化调整的边界回归结果较原生边界回归算法提高23.74%。
 

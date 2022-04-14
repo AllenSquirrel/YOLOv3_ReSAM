@@ -144,7 +144,7 @@ yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	   
 7	   DOHR-RetinalNet	  21.68	                    27.63
 	   YOLOV3-ReSAM	          33.15%	            45.57
 
-![image](https://user-images.githubusercontent.com/28772715/163292870-f4534547-d5ef-405e-ac5c-ba565bd2c35b.png)![image](https://user-images.githubusercontent.com/28772715/163292992-338f5aae-ab79-46d1-967a-8afc1c9bef60.png)
+![image](https://user-images.githubusercontent.com/28772715/163292870-f4534547-d5ef-405e-ac5c-ba565bd2c35b.png)
 
 改进后的网络模型平均精度均值mAP较原生网络模型提高11.07%，且单张图像平均召回率稳定在45%左右。另一方面，建立基于奖赏机制的边界回归策略,对原生网络模型中的边界回归粗定位基础上引入强化学习思想进行精细化调整。实验结果表明:经过精细化调整的边界回归结果较原生边界回归算法提高23.74%。
 

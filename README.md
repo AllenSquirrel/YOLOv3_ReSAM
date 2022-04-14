@@ -128,13 +128,14 @@ eval = coco
 ###实验结果
 
 实验结果:
+```
 	                             表1  VisDrone2019-DET-Test	(不同网络模型下各类目标的平均精度均值)
              pedestrain	  people  bicycle  car	   van	   trunk    tricycle    Awing-tricycle	 bus	    motor        mAP0.5
 yolov3       5.52%	  5.66%	  25.19%   10.21%  43.83%  25.64%   16.75%	14.22%	         34.85%	    38.96%	 22.08%
 yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	         62.35%	    61.57%	 33.15%
-
+```
 ![image](https://user-images.githubusercontent.com/28772715/163292784-17bb0024-1d59-4668-a203-999e4d62cd20.png)
-
+```
             表2 VisionDrone2019-Changle比赛结果
 排名	  模型&方法	    mAP0.5平均精度均值(%)	    AR500召回率(%)
 1	      DPNetV3	          37.37	                    53.78
@@ -145,7 +146,7 @@ yolov3_ReSAM 7.28%	  5.78%	  28.70%   14.31%  53.77%  42.96%   30.48%	24.38%	   
 6	   FPAFS-CenterNet	  32.34	                    39.48
 7	   DOHR-RetinalNet	  21.68	                    27.63
 	   YOLOV3-ReSAM	          33.15%	            45.57
-
+```
 ![image](https://user-images.githubusercontent.com/28772715/163292870-f4534547-d5ef-405e-ac5c-ba565bd2c35b.png)
 
 改进后的网络模型平均精度均值mAP较原生网络模型提高11.07%，且单张图像平均召回率稳定在45%左右。另一方面，建立基于奖赏机制的边界回归策略,对原生网络模型中的边界回归粗定位基础上引入强化学习思想进行精细化调整。实验结果表明:经过精细化调整的边界回归结果较原生边界回归算法提高23.74%。

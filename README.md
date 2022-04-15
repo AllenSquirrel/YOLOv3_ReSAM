@@ -1,5 +1,5 @@
 # YOLOv3_ReSAM
-YOLOv3_ReSAM:A Small Target Detection Method With Spatial Attention  Module
+YOLOv3_ReSAM:A Small Target Detection Method With Residual Spatial Attention  Module
 
 ### 准备工作
 * 推荐使用**Ubuntu 18.04**

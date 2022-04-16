@@ -141,8 +141,7 @@ void *detect_in_thread(void *ptr)
     printf("\nFPS:%.1f\n",fps);
     printf("Objects:\n\n");
     image display = buff[(buff_index+2) % 3];
-    //float temp_x=0;
-    //float temp_y=0;
+
     
     if(nboxes==0)
     {

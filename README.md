@@ -47,15 +47,23 @@ git clone https://github.com/AlexeyAB/darknet.git
 
 (1)扩充了特征金字塔并行结构融合了浅层特征,从而提取浅层网络模型中更多小目标细粒度特征信息到顶层特征图中进行预测。
 ```
+![image](https://user-images.githubusercontent.com/28772715/164364533-cd6dcdcd-a4d4-4564-9964-d72cf957d1a2.png)
 
 ```
 (2)多级并行特征金字塔结构中由于多层次和多尺度操作引起的重新缩放操作造成空间信息层级化的丢失，通过注入空间注意力机制弥补像素级分类的精度损失，弱化背景特征的同时强化小目标特征响应。
 ```
+![image](https://user-images.githubusercontent.com/28772715/164364618-371e1cc4-24bd-4f4a-8137-5ffc642311ea.png)
 
 
 ```
 (3)将空间注意力模块直接纵向加入原生主干网络结构中，新模块的添加会增加网络深度，深层的网络结构能够提取到具有丰富语义信息的抽象特征，但单一的纵向增加网络层数存在梯度消失的隐患，所以通过融入残差网络来横向加深网络。
 ```
+![image](https://user-images.githubusercontent.com/28772715/164364648-a2b30d2a-1082-420b-ab60-85c256972f8c.png)
+
+```
+(4)针对One-Stage目标检测算法中边界回归精度低的问题，提出了基于奖赏机制的边界回归模型。引入强化学习的思想在原生边界回归策略的粗定位基础上指导边界框回归，采用变体IoU计算方式作为奖赏函数的评价指标进行精细调整。。
+```
+![image](https://user-images.githubusercontent.com/28772715/164365031-73e830cd-b5f5-4c97-ae15-ff742cb91684.png)
 
 ### 预训练模型
 所有模型都是在VisDrone2019-DET数据集上训练，模型包括两个⽂件（`cfg`和`weights`）

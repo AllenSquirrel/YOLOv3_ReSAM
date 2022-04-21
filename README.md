@@ -65,6 +65,8 @@ git clone https://github.com/AlexeyAB/darknet.git
 ```
 ![image](https://user-images.githubusercontent.com/28772715/164365031-73e830cd-b5f5-4c97-ae15-ff742cb91684.png)
 
+
+
 ### 预训练模型
 所有模型都是在VisDrone2019-DET数据集上训练，模型包括两个⽂件（`cfg`和`weights`）
 

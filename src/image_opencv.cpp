@@ -5,10 +5,18 @@
 #include "opencv2/opencv.hpp"
 #include "image.h"
 
+/*
+################################
+借助OpenCV库实现 图像格式转换（像素矩阵格式与image格式转换）
+################################
+*/
+
 using namespace cv;
 
+
+
 //   ***************
-//   kalman_filter_tracking
+//   kalman_filter_tracking卡尔曼滤波跟踪
 
 /*class kalman{
 

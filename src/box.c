@@ -3,6 +3,14 @@
 #include <math.h>
 #include <stdlib.h>
 
+/*
+#########################################
+
+边界框回归机制
+改进IOU计算方法  --176
+
+#########################################
+*/
 int nms_comparator(const void *pa, const void *pb)
 {
     detection a = *(detection *)pa;
@@ -186,6 +194,13 @@ boxabs box_c(box a,box b)
     ba.right=fmin(a.x+a.w/2,b.x+b.w/2);
     return ba;
 }
+
+/*
+#########################################
+DIoU计算方式
+#########################################
+*/
+
 
 float box_iou(box a, box b)
 {

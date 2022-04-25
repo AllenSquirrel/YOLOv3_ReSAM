@@ -200,12 +200,12 @@ Tiny-YOLOV3_ReSAM   15.33%	15.58%	26.12%	84.55%	53.84%	43.61%	24.19%	   19.52%	 
 
              表4 轻量化前后网络结构浮点运算量及权重文件大小
 	     
-网络模型	               	模型浮点运算数BFLOPs	weights文件大小(30000 batches)
-YOLOV3_Tiny（原生网络模型）	 8.28                    35.4MB
+网络模型	               	     模型浮点运算数BFLOPs	weights文件大小(30000 batches)
+YOLOV3_Tiny（原生网络模型）	       8.28                       35.4MB
 
-YOLOV3_ReSAM（轻量化前）	   18.243                  78.1MB
+YOLOV3_ReSAM（轻量化前）	         18.243                     78.1MB
 
-Tiny-YOLOV3_ReSAM（轻量化后）	   13.613                  42.9MB
+Tiny-YOLOV3_ReSAM（轻量化后）	         13.613                     42.9MB
 
 ```
 
@@ -213,12 +213,12 @@ Tiny-YOLOV3_ReSAM（轻量化后）	   13.613                  42.9MB
 
 ```
         表5 轻量化前后网络模型推理延迟及FPS大小
-网络模型	        	单张图像推理延迟/s	视频流FPS
-YOLOV3_Tiny（原生网络模型）	 0.064004             17.5
+网络模型	        	      单张图像推理延迟/s	视频流FPS
+YOLOV3_Tiny（原生网络模型）	      0.064004                 17.5
  
-YOLOV3_ReSAM（轻量化前）	   0.164109             8.5
+YOLOV3_ReSAM（轻量化前）	        0.164109                  8.5
 
-Tiny-YOLOV3_ReSAM（轻量化后）	   0.1468690            13.2
+Tiny-YOLOV3_ReSAM（轻量化后）	        0.1468690                13.2
 
 ```
 

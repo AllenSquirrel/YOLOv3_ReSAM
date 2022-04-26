@@ -147,7 +147,7 @@ eval = coco
 
 实验结果:
 ```
-	                             表1  VisDrone2019-DET-Test	(不同网络模型下各类目标的平均精度均值)
+	                    表1  VisDrone2019-DET-Test	(不同网络模型下各类目标的平均精度均值)
 				     
 	        pedestrain      people	bicycle	car	van	trunk	tricycle    Awing-tricycle	bus	motor	mAP0.5
 YOLOv3-Tiny	15.52%	        15.66%	25.19%	80.21%	43.83%	25.64%	16.75%	    14.22%	        34.85%	38.96%	22.08%
@@ -163,7 +163,7 @@ TPH_YOLOv5	29%	        16.75%	15.69%	68.94%	49.79%	45.16%	27.33%	    24.72%	    
 ![image](https://user-images.githubusercontent.com/28772715/163297109-1f16c37e-de1e-4f86-965d-01aa6fdaf09b.png)
 
 ```
-            表2 VisionDrone2019-Changle比赛结果
+               表2 VisionDrone2019-Changle比赛结果
 	    
 排名	  模型&方法	    mAP0.5平均精度均值(%)	    AR500召回率(%)
 1	      DPNetV3	          37.37	                    53.78
@@ -190,7 +190,7 @@ TPH_YOLOv5	29%	        16.75%	15.69%	68.94%	49.79%	45.16%	27.33%	    24.72%	    
 （1）mAP：过平均准确度均值mAP对目标检测的准确性进行评价
 
 ```
-                                   表3 网络模型轻量化前后各类目标的平均精度均值
+                                     表3 网络模型轻量化前后各类目标的平均精度均值
 
 	            Pedestrain	people	bicycle	car	van	trunk	tricycle   Awing-tricycle   bus	     motor     mAP
 YOLOV3_Tiny	    15.52%	15.66%	25.19%	80.21%	43.83%	25.64%	16.75%	   14.22%	    34.85%   38.96%    22.08%

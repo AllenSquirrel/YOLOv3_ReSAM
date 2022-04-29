@@ -140,6 +140,9 @@ eval = coco
 (6)当训练停止之后，可以从`darknet\backup`中取出最新保存的训练权重`.weights`，并选择它们中检测效果最好的
 例如，当训练9000次停止后，效果最好的模型可能是之前保存权重中的一个（7000,8000,9000），这是因为过拟合（Overfiting）现象。过拟合的表现可以解释为，在训练图像上检测效果很好，但是在其他图像上效果不佳，这时候就该尽早停止训练（**早停点**）。
 
+![image](https://user-images.githubusercontent.com/28772715/165874422-5f982784-6b01-488e-9302-df9c23482111.png)
+
+
 (7)运⾏训练好的模型，进⾏目标检测，执⾏：
 ```
 ./darknet detector demo cfg/uav_dataset.data cfg/yolov3_ReSAM.cfg yolov3-tiny-resnet02_120000_300000.weights test.mp4

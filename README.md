@@ -1,7 +1,7 @@
 # YOLOv3_ReSAM
 YOLOv3_ReSAM:A Small Target Detection Method With Residual Spatial Attention  Module
 
-### [专利] 王浩同,等. 一种应用于嵌入式平台轻量型高效率的目标检测方法[P]. 陕西省：CN111723747A,2020-09-29.
+### **[专利] 王浩同,等. 一种应用于嵌入式平台轻量型高效率的目标检测方法[P]. 陕西省：CN111723747A,2020-09-29.
 
 ### 准备工作
 * 推荐使用**Ubuntu 18.04**

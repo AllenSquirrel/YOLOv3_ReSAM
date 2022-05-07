@@ -195,6 +195,8 @@ boxabs box_c(box a,box b)
     return ba;
 }
 
+
+
 /*
 #########################################
 DIoU计算方式
@@ -227,6 +229,10 @@ float box_iou(box a, box b)
     return box_intersection(a, b)/box_union(a, b);
 }
 */
+
+
+
+
 float box_rmse(box a, box b)
 {
     return sqrt(pow(a.x-b.x, 2) + 

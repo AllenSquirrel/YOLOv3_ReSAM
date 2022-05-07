@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <time.h>
 
-//深度可分离卷积操作
+//反卷积操作
 
 static size_t get_workspace_size(layer l){
     return (size_t)l.h*l.w*l.size*l.size*l.n*sizeof(float);

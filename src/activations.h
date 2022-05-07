@@ -36,7 +36,11 @@ static inline float elu_activate(float x){return (x >= 0)*x + (x < 0)*(exp(x)-1)
 static inline float selu_activate(float x){return (x >= 0)*1.0507*x + (x < 0)*1.0507*1.6732*(exp(x)-1);}
 static inline float relie_activate(float x){return (x>0) ? x : .01*x;}
 static inline float ramp_activate(float x){return x*(x>0)+.1*x;}
+
+//add leakrelu  
+
 static inline float leaky_activate(float x){return (x>0) ? x : .1*x;}
+
 static inline float tanh_activate(float x){return (exp(2*x)-1)/(exp(2*x)+1);}
 static inline float plse_activate(float x)
 {

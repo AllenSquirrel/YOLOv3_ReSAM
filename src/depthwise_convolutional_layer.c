@@ -82,30 +82,7 @@ void cudnn_depthwise_convolutional_setup(layer *l)
     #else
     cudnnSetConvolution2dDescriptor(l->convDesc, l->pad, l->pad, l->stride, l->stride, 1, 1, CUDNN_CROSS_CORRELATION);
     #endif
-    /*cudnnGetConvolutionForwardAlgorithm(cudnn_handle(),
-            l->srcTensorDesc,
-            l->weightDesc,
-            l->convDesc,
-            l->dstTensorDesc,
-            CUDNN_CONVOLUTION_FWD_PREFER_FASTEST,
-            0,
-            &l->fw_algo);
-    cudnnGetConvolutionBackwardDataAlgorithm(cudnn_handle(),
-            l->weightDesc,
-            l->ddstTensorDesc,
-            l->convDesc,
-            l->dsrcTensorDesc,
-            CUDNN_CONVOLUTION_BWD_DATA_PREFER_FASTEST,
-            0,
-            &l->bd_algo);
-    cudnnGetConvolutionBackwardFilterAlgorithm(cudnn_handle(),
-            l->srcTensorDesc,
-            l->ddstTensorDesc,
-            l->convDesc,
-            l->dweightDesc,
-            CUDNN_CONVOLUTION_BWD_FILTER_PREFER_FASTEST,
-            0,
-            &l->bf_algo);*/
+  
 }
 #endif
 #endif
